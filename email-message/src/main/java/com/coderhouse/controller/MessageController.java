@@ -1,6 +1,7 @@
 package com.coderhouse.controller;
 
 import com.coderhouse.service.EmailService;
+import com.coderhouse.service.MessageService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,16 +14,27 @@ import javax.mail.MessagingException;
 @RequestMapping("/coder-house")
 public class MessageController {
 
-    private final EmailService service;
+    private final EmailService emailService;
+    private final MessageService messageService;
 
     @PostMapping("/mensajes/email/send")
     public void sendEmail() {
-        service.sendEmail();
+        emailService.sendEmail();
     }
 
     @PostMapping("/mensajes/email/send/attachment")
     public void sendEmailWithAttachment() throws MessagingException {
-        service.sendEmailWithAttachment();
+        emailService.sendEmailWithAttachment();
     }
 
+    @PostMapping("/mensajes/sms/send")
+    public void sendSms() {
+        messageService.sendMessageToSms();
+    }
+
+
+    @PostMapping("/mensajes/whatsapp/send")
+    public void sendMessageToWhatsApp() {
+        messageService.sendMessageToWhatsApp();
+    }
 }

@@ -1,5 +1,6 @@
-package com.coderhouse.service;
+package com.coderhouse.service.impl;
 
+import com.coderhouse.service.EmailService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.mail.SimpleMailMessage;

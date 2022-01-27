@@ -28,6 +28,14 @@ spring:
           writetimeout: 5000
           starttls:
             enable: true
+
+twilio:
+  number-sms: '+18445370610'
+  number-whatsapp: '+14155238886'
+  account:
+    sid: AC02a3e3befc4901b7c8b8042ad2dde8f7
+  auth:
+    token: a23b0ab9f865d6910e63bcbfb4e7da0a
 springdoc:
   api-docs:
     path: /openapi
