@@ -11,8 +11,6 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.PostConstruct;
 import javax.mail.MessagingException;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
@@ -35,7 +33,7 @@ public class MessageController {
                 new Message(2L, "Mensaje-ABCD"),
                 new Message(3L, "Mensaje-ABCD"),
                 new Message(4L, "Mensaje-ABCE"),
-                new Message(5L, "Mensaje-A<E>BCF"))
+                new Message(5L, "Mensaje-ABCF"))
         );
     }
 

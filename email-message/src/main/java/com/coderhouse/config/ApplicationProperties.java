@@ -21,4 +21,5 @@ public class ApplicationProperties {
 
     @Value(value = "${twilio.number-whatsapp}")
     private String twilioNumberWhatsapp;
+
 }

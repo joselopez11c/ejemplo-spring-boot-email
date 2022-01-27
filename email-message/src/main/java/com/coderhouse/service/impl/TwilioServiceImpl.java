@@ -19,8 +19,11 @@ public class TwilioServiceImpl implements MessageService {
     @Override
     public void sendMessageToSms() {
         Twilio.init(properties.getTwilioAccountId(), properties.getTwilioToken());
-        Message message = Message.creator(new PhoneNumber("+51991814042"), new PhoneNumber(properties.getTwilioNumberSms()),
-                "Hello from Coderhouse SMS").create();
+        Message message = Message.creator(
+                new PhoneNumber("+51991814042"),
+                new PhoneNumber(properties.getTwilioNumberSms()),
+                "Hello from Coderhouse SMS"
+        ).create();
 
         log.info(message.getSid());
     }
@@ -36,6 +39,7 @@ public class TwilioServiceImpl implements MessageService {
         log.info(message.getSid());
     }
 
+    // whatsapp:elNumeroDeTwilio // whatsapp:ElNumeroAEnviarElMensaje
     private String whatsApp(String number) {
         var value =  String.format("%s%s", "whatsapp:", number);
         log.info(value);

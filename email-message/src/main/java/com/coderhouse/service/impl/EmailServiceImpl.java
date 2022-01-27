@@ -9,7 +9,6 @@ import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 
 import javax.mail.MessagingException;
-import javax.mail.internet.MimeMessage;
 
 @Service
 @RequiredArgsConstructor
@@ -33,11 +32,14 @@ public class EmailServiceImpl implements EmailService {
         var message = javaMailSender.createMimeMessage();
 
         var helper = new MimeMessageHelper(message, true);
-        helper.setTo("joselopez11c@gmail.com");
-
+        var userName = "Jose Ignacio"; //Viene de la bd
+        helper.setTo("joselopez11c@gmail.com"); //Viene de la bd
         helper.setSubject("Testing form Coderhouse");
-        helper.setText("<h1> Este es un ejemplo desde Spring Boot <h1>", true);
-        helper.addAttachment("coderhouse.png", new ClassPathResource("static/coderhouse.png"));
+        helper.setText(
+                String.format("<h1> Hola %s Este es un ejemplo desde Spring Boot <h1>", userName), true);
+        helper.addAttachment("coderhouse.png",
+                new ClassPathResource("static/coderhouse.png"));
         javaMailSender.send(message);
     }
 }
+

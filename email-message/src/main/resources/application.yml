@@ -1,5 +1,4 @@
 spring:
-  env: desa
   datasource:
     url: jdbc:h2:mem:coderhouse
     driverClassName: org.h2.Driver
@@ -8,12 +7,6 @@ spring:
   jpa:
     database:
       platform: org.hibernate.dialect.H2Dialect
-  cache:
-    type: redis
-  redis:
-    host: localhost
-    port: 6379
-    timeOfLife: 60000
   mail:
     host: smtp.gmail.com
     port: 587
@@ -36,6 +29,8 @@ twilio:
     sid: AC02a3e3befc4901b7c8b8042ad2dde8f7
   auth:
     token: a23b0ab9f865d6910e63bcbfb4e7da0a
+
+
 springdoc:
   api-docs:
     path: /openapi
