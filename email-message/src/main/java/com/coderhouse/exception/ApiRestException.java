@@ -1,6 +1,5 @@
 package com.coderhouse.exception;
 
-
 import lombok.*;
 
 @Builder
